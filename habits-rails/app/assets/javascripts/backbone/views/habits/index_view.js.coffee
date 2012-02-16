@@ -8,7 +8,7 @@ class HabitTracker.Views.Habits.IndexView extends Backbone.View
 
   initialize: () ->
     @options.habits.bind('reset', @addAll)
-    @options.habits.bind('change', @render, this) #TODO this ruins tabs, revisit
+    @options.habits.bind('change', @render, this)
     @options.habits.bind('add', @render, this)
     
   createOnEnter: (e) ->
@@ -36,7 +36,7 @@ class HabitTracker.Views.Habits.IndexView extends Backbone.View
   render: =>
     $(@el).html(@template(habits: @options.habits.toJSON() ))
     @addAll()
-    $("#habits").sortable
+    $("#habits-habits").sortable
       axis: "y"
       dropOnEmpty: false
       cursor: "move"
