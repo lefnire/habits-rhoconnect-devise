@@ -1,0 +1,21 @@
+<h1>Edit habit</h1>
+
+<form id="edit-habit" name="habit">
+  <div class="field">
+    <label for="name">Name:</label>
+    <%= EJS.Helpers.prototype.text_field_tag("name", name) %>
+  </div>
+
+  <div class="field">
+    <label for="notes">Notes:</label>
+    <%= EJS.Helpers.prototype.text_area_tag('notes', notes) %>
+  </div>
+
+  <div class="actions">
+    <input type="submit" value="Update Habit" />
+  </div>
+
+</form>
+
+<a href="#">Back</a>
+<a href="#/<%= id %>/destroy" class="destroy">Delete</a>

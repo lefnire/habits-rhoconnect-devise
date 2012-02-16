@@ -1,0 +1,29 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @habit.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @habit.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="habit[name]" class="fieldLabel">Name</label>
+            <input type="text" id="habit[name]" name="habit[name]" <%= placeholder("Name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="habit[notes]" class="fieldLabel">Notes</label>
+            <input type="text" id="habit[notes]" name="habit[notes]" <%= placeholder("Notes") %> />
+          </div>
+      
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

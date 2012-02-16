@@ -1,0 +1,29 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :show, :id => @habit.object %>
+    <h1>Edit <%= @habit.name%></h1>
+    <%= link_to "Delete", :action => :delete, :id => @habit.object %>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @habit.object %>"/>
+      <table>
+          
+          <tr>
+              <td class="itemLabel">Name: </td>
+              <td class="itemValue"><input type="text" name="habit[name]" value="<%= @habit.name %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Notes: </td>
+              <td class="itemValue"><input type="text" name="habit[notes]" value="<%= @habit.notes %>"/></td>
+          </tr>
+          
+      </table>
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

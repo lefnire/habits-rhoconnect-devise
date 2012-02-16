@@ -1,0 +1,8 @@
+<%= name %>
+<div class='habit-meta'>
+  <a class="edit-link" href="#/<%= id %>/edit">Edit</a>
+  <% if (notes) { %>
+    <img src='/assets/comment.png' class="comment" />
+    <div class='qtip'><%= notes %></div>
+  <% } %>
+</div>
